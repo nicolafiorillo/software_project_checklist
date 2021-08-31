@@ -2,7 +2,7 @@
 \documentclass[
 	fontsize=10pt, % Base font size
 	twoside=false, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
-	% open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
 	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
@@ -36,8 +36,8 @@
 %	BOOK INFORMATION
 %----------------------------------------------------------------------------------------
 
-\titlehead{}
-\title[Software Project Checklist Class]{Software Project Checklist}
+\titlehead{v. 0.1-draft}
+\title[Software Project Checklist]{Software Project Checklist}
 \author[JBG]{Nicola Fiorillo}
 \date{\today}
 \publishers{}
@@ -86,9 +86,10 @@
 %	PREFACE
 %----------------------------------------------------------------------------------------
 
-% \chapter*{Preface}
+\chapter*{Preface}
 
-% \blindtext
+Goal is to have a tool to verify every single aspect of a (ideally software) project.
+This document is a continuous work-in-progress.
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
@@ -96,24 +97,24 @@
 
 \begingroup % Local scope for the following commands
 
-% Define the style for the TOC, LOF, and LOT
-%\setstretch{1} % Uncomment to modify line spacing in the ToC
-%\hypersetup{linkcolor=blue} % Uncomment to set the colour of links in the ToC
-\setlength{\textheight}{230\vscale} % Manually adjust the height of the ToC pages
+	% Define the style for the TOC, LOF, and LOT
+	%\setstretch{1} % Uncomment to modify line spacing in the ToC
+	%\hypersetup{linkcolor=blue} % Uncomment to set the colour of links in the ToC
+	\setlength{\textheight}{230\vscale} % Manually adjust the height of the ToC pages
 
-% Turn on compatibility mode for the etoc package
-\etocstandarddisplaystyle % "toc display" as if etoc was not loaded
-\etocstandardlines % "toc lines as if etoc was not loaded
+	% Turn on compatibility mode for the etoc package
+	\etocstandarddisplaystyle % "toc display" as if etoc was not loaded
+	\etocstandardlines % "toc lines as if etoc was not loaded
 
-\tableofcontents % Output the table of contents
+	\tableofcontents % Output the table of contents
 
-% \listoffigures % Output the list of figures
+	% \listoffigures % Output the list of figures
 
-% Comment both of the following lines to have the LOF and the LOT on different pages
-% \let\cleardoublepage\bigskip
-% \let\clearpage\bigskip
+	% Comment both of the following lines to have the LOF and the LOT on different pages
+	% \let\cleardoublepage\bigskip
+	% \let\clearpage\bigskip
 
-% \listoftables % Output the list of tables
+	% \listoftables % Output the list of tables
 
 \endgroup
 
@@ -124,27 +125,240 @@
 \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
 \setchapterstyle{kao} % Choose the default chapter heading style
 
-\chapter{First Chapter}
+\chapter{Business}
 
+	\section{Why(s)}
+		\begin{itemize}
+			\item[-] Why building \textbf{this} solution?
+			\item[-] Why \textbf{building} this solution?
+		\end{itemize}
+
+		\section{Other}
+		\begin{itemize}
+			\item[-] Defining solution lifetime
+			\item[-] Cost analisys
+		\end{itemize}
+
+\chapter{Solution goals}
+
+\section{User goals}
+	\begin{itemize}
+		\item[-] Defining personas
+		\item[-] Analyze user goals
+		\item[-] Analyze user environment
+		\begin{itemize}
+			\item Define involved areas
+			\item Define communication channels
+		\end{itemize}
+	\end{itemize}
+
+\section{Product goals}
+	\begin{itemize}
+		\item[-] Define commitments
+		\item[-] Define scope(s)
+		\item[-] Define a clear project vision and mission
+		\item[-] Define (high level) functional requirements
+		\item[-] Define (high level) non-functional requirements
+		\item[-] Requirements not to be considered
+	\end{itemize}
+
+\chapter{People}
+	\begin{itemize}
+		\item[-] Project responsible
+		\item[-] Decision-capable (and reachable) contact persons (for budget-related decisions)
+		\item[-] Domain experts (and reachable)
+		\item[-] Product owner
+		\item[-] Developers
+		\item[-] Project leader
+		\item[-] Testers
+		\item[-] Designers
+		\item[-] Devops
+		\item[-] Support (level 1 and 2)
+		\item[-] Other experts
+		\item[-] Defining future maintainers
+	\end{itemize}
+
+\chapter{Analysis}
+	\begin{itemize}
+		\item[-] Alternative solutions/competitors investigation
+			\begin{itemize}
+				\item Taking inspiration
+				\item Pro vs. cons analysis
+			\end{itemize}
+		\item[-] Defining user stories
+		\item[-] Lifecycle model and management
+			\begin{itemize}
+				\item Wartefall/iteration approach
+				\item Issue tracking tool
+				\item Sharing knowledge, sharing code ownership
+				\item Backlog and issue prioritization (urgency vs. severity/impact)
+			\end{itemize}
+		\item[-] Defining solution roadmap
+		\item[-] Defining project phases/milestones
+			\begin{itemize}
+				\item Verifiable (and undisputable) outcomes
+				\item Prefer short phases
+			\end{itemize}
+		\item[-] Define a release strategy
+		\item[-] Functional requirements
+			\begin{itemize}
+				\item System administration functionalities
+			\end{itemize}
+
+		\item[-] Non-functional requirements
+			\begin{itemize}
+				\item Defining product type (web, mobile, desktop, other)
+				\item Deployments
+					\begin{itemize}
+						\item cloud
+						\item on-premise
+					\end{itemize}
+				\item Security requirements
+				\item Privacy requirements (GDPR)
+					\begin{itemize}
+						\item data protection
+					\end{itemize}
+				\item Legal requirements
+				\item Logging requirements
+				\item Auditing requirements
+				\item Monitoring/alert (telemetry) requirements
+					\begin{itemize}
+						\item defining KPIs and metrics
+						\item defining plan
+					\end{itemize}
+				\item Accessibility requirements
+					\begin{itemize}
+						\item responsiveness
+					\end{itemize}
+				\item Error handling (?)
+				\item API semantic consensus
+				\item Load estimation
+					\begin{itemize}
+						\item number of concurrent users (average, peaks)
+						\item API requests per second (average, peaks)
+						\item data quantity
+						\item bandwidth (data transfer)
+						\item cpu usage
+					\end{itemize}
+				\item Scalability strategies
+				\item Recovery strategies (in case of failures)
+				\item External dependencies involved
+				\item Defining failure scenarios
+				\item Declaring well-known limitations
+			\end{itemize}
+		\item[-] Define a deploy strategy
+			\begin{itemize}
+				\item installation requirements (env target)
+				\item update/migration requirements (max downtime accepted)
+				\item define rollback plan
+				\item deploy documentation (release notes)
+			\end{itemize}
+		\item[-] Define a QA strategy
+			\begin{itemize}
+				\item accessibility, load, security, etc...
+			\end{itemize}
+		\item[-] Education/training requirements
+		\item[-] Tech decisions
+			\begin{itemize}
+				\item operating systems, frameworks, architectural patterns, programming languages, data persistences
+				\item external dependencies communication
+			\end{itemize}
+		\item[-] Risks analisys
+			\begin{itemize}
+				\item cost-benefit analysis
+			\end{itemize}
+		\item[-] Use decision records documentation: \href{https://github.com/joelparkerhenderson/architecture-decision-record}{architecture decision record}
+		\item[-] UX analisys (iteratively with domain experts)
+			\begin{itemize}
+				\item goal: became a domain expert involving domain experts)
+				\item defining personas, create workflow/mockups
+				\item usability test with final users
+				\item acceptance test (user stories) with final users
+			\end{itemize}
+		\item[-] Brainstorming/discussion/shared solution
+			\begin{itemize}
+				\item goal: sharing domain problems, improve common domain/product knowledge
+			\end{itemize}
+		\item[-] UI design
+			\begin{itemize}
+				\item brand manual, color guide
+			\end{itemize}
+	\end{itemize}
+
+\chapter{Development}
+	\begin{itemize}
+		\item[-] Create alias for email-team (inside and outside communication)
+		\item[-] Team and stakeholders shall be informed of:
+			\begin{itemize}
+				\item project vision and mission
+				\item constraints
+				\item deadlines
+			\end{itemize}
+		\item[-] Defining automated test strategies (functional, integration, unit, UI, load, performances, security, system)
+		\item[-] Devops strategies
+			\begin{itemize}
+				\item defining source control repository strategy (monorepo)
+				\item build/test/deploy automation tools
+				\item defining environments (on-click enviroment deploy, creation/update)
+					\begin{itemize}
+						\item local
+						\item development
+						\item test
+						\item staging
+						\item production
+					\end{itemize}
+			\end{itemize}
+		\item[-] Defining code review/approval strategy
+		\item[-] Define the DoD (Definition of Done)
+			\begin{itemize}
+				\item workflows/mockups (UX)
+				\item product artifacts
+				\item documentations (User guide, API service, technical documents, legal conformity to)
+				\item acceptance tests positive results
+			\end{itemize}
+		\item[-] Code formatting standards consensus
+			\begin{itemize}
+				\item linters
+			\end{itemize}
+		\item[-] API guideline consensus
+		\item[-] API definition
+			\begin{itemize}
+				\item API signatures must came from use cases
+				\item document API from the beginning
+			\end{itemize}
+		\item[-] Dev principles
+			\begin{itemize}
+				\item KISS principle
+				\item Occam's razor
+				\item Unit test
+				\item git usage principles
+				\item every commit shall contain only one modification (feature, bug fix, task) by transient branch
+			\end{itemize}
+		\item[-] Syncronization
+			\begin{itemize}
+				\item daily standup/sync meeting
+				\item periodic demo to customer/management (iteration/sprint-related)
+				\item retrospective
+			\end{itemize}
+	\end{itemize}
+
+% \pagelayout{wide} % No margins
+% \addpart{Title of the Part}
+% \pagelayout{margin} % Restore margins
+
+\chapter{Deploy and Release}
 \blindtext
 
-\pagelayout{wide} % No margins
-\addpart{Title of the Part}
-\pagelayout{margin} % Restore margins
-
-\chapter{Second Chapter}
-
-\blindtext
+\chapter{Notes}
+	\begin{itemize}
+		\item[-] Technical specs document: \href{https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/}{stackoverflow, a practical guide to writing technical specs}
+	\end{itemize}
 
 % \appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
 
 % \pagelayout{wide} % No margins
 % \addpart{Appendix}
 % \pagelayout{margin} % Restore margins
-
-% \chapter{Some more blindtext}
-
-% \blindtext
 
 %----------------------------------------------------------------------------------------
 
