@@ -9,6 +9,7 @@ all: clean build show
 build:
 	@mkdir -p $(BUILD_DIR)
 	@pdflatex -output-directory=$(BUILD_DIR) $(TEX_SOURCE)
+	@pdflatex -output-directory=$(BUILD_DIR) $(TEX_SOURCE)
 
 clean:
 	@rm -rf $(BUILD_DIR)
